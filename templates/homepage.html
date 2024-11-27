@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Personal Finance Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Finance Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Changed ml-auto to ms-auto for right alignment in Bootstrap 5 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="background-radial-gradient overflow-hidden" id="hero" style="padding-top: 100px;">
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+                <!-- Text Section -->
+                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                        Take Control of Your Financial Future
+                    </h1>
+                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                        Track, manage, and grow your finances effortlessly with powerful tools tailored for your needs.
+                    </p>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-sm mt-4">Get Started</a>
+                </div>
+
+                <!-- Image Section (Optional for homepage) -->
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+                    <img src="{{ url_for('static', filename='images/finance-dashboard.png') }}" class="img-fluid rounded"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features py-5" id="features">
+        <div class="container">
+            <h2 class="text-center mb-4" style="color: hsl(218, 81%, 95%)">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-chart-pie fa-3x text-primary"></i>
+                    <h3 class="mt-3">Real-Time Expense Tracking</h3>
+                    <p>Instantly categorize and track your daily expenses to gain a clear overview of where your money is going.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-wallet fa-3x text-primary"></i>
+                    <h3 class="mt-3">Income & Budget Management</h3>
+                    <p>Set up income goals, create personalized budgets, and see how well you're sticking to them. Our intuitive budget templates make it simple to plan.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-bell fa-3x text-primary"></i>
+                    <h3 class="mt-3">Smart Alerts & Notifications</h3>
+                    <p>Stay ahead of bills, payment due dates, and budget limits with automatic reminders, so you never miss a payment or go over your budget again.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-chart-line fa-3x text-primary"></i>
+                    <h3 class="mt-3">Visual Financial Reports</h3>
+                    <p>Gain insights with visually appealing charts and reports that help you understand your spending patterns, savings, and investment performance.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-piggy-bank fa-3x text-primary"></i>
+                    <h3 class="mt-3">Savings Goals</h3>
+                    <p>Set and track progress towards your savings goals, whether it’s for an emergency fund, vacation, or large purchase.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-credit-card fa-3x text-primary"></i>
+                    <h3 class="mt-3">Debt Management</h3>
+                    <p>Track your debt repayment, calculate interest, and create a clear plan to become debt-free faster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose bg-gradient py-5" id="why-choose" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+    <div class="container">
+        <h2 class="text-center text-white mb-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Why Choose Your Finance Tracker?</h2>
+        <div class="row align-items-center">
+            <!-- Text Section with Animated List -->
+            <div class="col-md-6">
+                <ul class="list-unstyled text-white">
+                    <li class="mb-3" style="animation: fadeInUp 1s ease-in-out;">
+                        <i class="fas fa-check-circle text-success" style="font-size: 1.5rem;"></i> <span style="font-size: 1.2rem;">Easy to Use:</span> Our user-friendly interface ensures that managing your finances is simple and efficient, no matter your experience level.
+                    </li>
+                    <li class="mb-3" style="animation: fadeInUp 1.2s ease-in-out;">
+                        <i class="fas fa-check-circle text-success" style="font-size: 1.5rem;"></i> <span style="font-size: 1.2rem;">Secure & Private:</span> We prioritize your privacy with industry-leading encryption and security protocols, ensuring that your financial data remains safe and secure.
+                    </li>
+                    <li class="mb-3" style="animation: fadeInUp 1.4s ease-in-out;">
+                        <i class="fas fa-check-circle text-success" style="font-size: 1.5rem;"></i> <span style="font-size: 1.2rem;">Accessible Anytime, Anywhere:</span> Track your finances on the go with our mobile app or on your desktop, syncing your data in real-time.
+                    </li>
+                    <li class="mb-3" style="animation: fadeInUp 1.6s ease-in-out;">
+                        <i class="fas fa-check-circle text-success" style="font-size: 1.5rem;"></i> <span style="font-size: 1.2rem;">Comprehensive Financial Overview:</span> Get a 360-degree view of your finances with one powerful tool. From bank accounts to investments, track everything in one place.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Image Section with Hover Effect -->
+            <div class="col-md-6">
+                <div class="image-container" style="position: relative; overflow: hidden; border-radius: 12px;">
+                    <img src="{{ url_for('static', filename='images/pexels-energepic-com-27411-159888.jpg') }}" class="img-fluid rounded" alt=""
+                         style="transition: transform 0.5s ease; transform: scale(1.05);">
+                    <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.3); transition: opacity 0.3s ease;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Adding some animations */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Hover effect for the image */
+    .image-container:hover img {
+        transform: scale(1.1);
+    }
+    .image-container:hover .hover-overlay {
+        opacity: 0;
+    }
+</style>
+
+
+
+
+    <!-- Contact Us Section -->
+    <section class="contact-us py-5" id="contact">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need support, our customer service team is here to help.</p>
+            <p>Email us anytime at <strong><a href="mailto:support@example.com">support@yourfinancetracker.com</a></strong> or visit our <a href="#">FAQ section</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Your Finance Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

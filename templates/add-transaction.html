@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Transaction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/" class="logo-mini">
+                <img src="{{ url_for('static', filename='images/8787764048c147559723978e2af72e3f-free.png') }}" class="img-fluid rounded"
+                alt="">
+            </a>
+        </div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/add-transaction" class="active">Add Transaction</a></li>
+                <li><a href="/budget">Budget</a></li>
+                <li><a href="/goals">Financial Goals</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Add Transaction</a>
+        </nav>
+
+        <div class="container-fluid mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Add New Transaction</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('add_transaction') }}" id="transaction-form">
+                        <div class="form-group">
+                            <label for="transaction-description">Description</label>
+                            <input type="text" class="form-control" id="transaction-description" name="description" placeholder="Enter transaction description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-amount">Amount</label>
+                            <input type="number" class="form-control" id="transaction-amount" name="amount" placeholder="Enter amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-type">Type</label>
+                            <select class="form-control" id="transaction-type" name="type" required>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="transaction-date">Date</label>
+                            <input type="date" class="form-control" id="transaction-date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-category">Category</label>
+                            <select class="form-control" id="transaction-category" name="category" required>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
+                                <!-- Hardcoded categories (optional, if needed) -->
+                                <option value="groceries">Groceries</option>
+                                <option value="personal">Personal</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="other">Other</option>
+                                <option value="investment">Investment</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Transaction</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Personal Finance App</title>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" />
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Section: Design Block -->
+    <section class="background-radial-gradient overflow-hidden">
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+                <!-- Text Section -->
+                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                        Secure Your Financial Future
+                    </h1>
+                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                        Join the best finance platform tailored to help you track, analyze, and grow your investments with ease.
+                    </p>
+                </div>
+
+                <!-- Form Section -->
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                    <div class="card bg-glass">
+                        <div class="card-body px-4 py-5 px-md-5">
+                            <form action="{{ url_for('login') }}" method="POST">
+                                <!-- Email input -->
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="email" id="email" name="email" class="form-control" required style="color: white;" />
+                                    <label class="form-label" for="email" style="color: white;">Email address</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <input type="password" id="password" name="password" class="form-control" required style="color: white;" />
+                                    <label class="form-label" for="password" style="color: white;">Password</label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+
+                                <!-- Register buttons -->
+                                <div class="text-center">
+                                    <p>or with:</p>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <i class="fab fa-github"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Sign Up link -->
+                                <p class="text-center mt-4">Don't have an account? <a href="{{ url_for('register') }}" style="color: blue;">Sign Up</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section: Design Block -->
+</body>
+</html>

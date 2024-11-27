@@ -1,0 +1,202 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: #444;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2877, 77, 77, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    filter: brightness(1.5);
+}
+
+.navbar-collapse {
+    text-align: center;
+    background-color: #333; /* Optional: Background for menu on smaller screens */
+    padding: 1rem;
+}
+
+.nav-item .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.nav-item .nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('{{ url_for("static", filename="images/pexels-energepic-com-27411-159888.jpg") }}');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features {
+    background-color: #fff;
+    padding: 2rem 1rem;
+}
+
+.features .col-md-4 {
+    margin-bottom: 2rem;
+}
+
+.features h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.testimonials .card-body {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .blockquote-footer {
+    text-align: right;
+    font-style: italic;
+    color: #888;
+}
+
+/* Call-to-Action Section */
+.cta {
+    background-color: #007bff;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cta a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Features Section */
+    .features h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials .card-body {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for Navbar Toggling */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-toggler[aria-expanded="true"] ~ .navbar-collapse {
+        display: block;
+    }
+
+    .navbar-collapse.show {
+        display: block !important;
+    }
+}

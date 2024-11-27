@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Goals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/" class="logo-mini">
+                <img src="{{ url_for('static', filename='images/8787764048c147559723978e2af72e3f-free.png') }}" class="img-fluid rounded"
+                alt="">
+            </a>
+        </div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/add-transaction">Add Transaction</a></li>
+                <li><a href="/budget">Budget</a></li>
+                <li><a href="/goals" class="active">Financial Goals</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Financial Goals</a>
+        </nav>
+
+        <div class="container-fluid mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Set Your Goals</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('goals') }}" id="goal-form">
+                        <div class="form-group">
+                            <label for="goal-name">Goal Name</label>
+                            <input type="text" class="form-control" id="goal-name" name="goal_name" placeholder="Enter goal name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="goal-amount">Target Amount</label>
+                            <input type="number" class="form-control" id="goal-amount" name="goal_amount" placeholder="Enter target amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="goal-date">Target Date</label>
+                            <input type="date" class="form-control" id="goal-date" name="goal_date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Set Goal</button>
+                    </form>
+
+                    <div id="goal-list" class="mt-4">
+                        <h2>Current Financial Goals</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Goal</th>
+            <th scope="col">Target Amount</th>
+            <th scope="col">Target Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for goal in financial_goals %}
+            <tr>
+                <td>{{ goal.name }}</td>
+                <td>${{ goal.target_amount }}</td>
+                <td>{{ goal.target_date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
